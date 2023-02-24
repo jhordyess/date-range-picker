@@ -1,4 +1,5 @@
 import * as React from "react";
+import { last12Months } from "./calcs/ranges";
 
 export default function App() {
   return (
@@ -19,6 +20,10 @@ export default function App() {
         consequat duis aliquip velit magna fugiat in. Et duis sunt mollit amet
         enim deserunt mollit culpa eiusmod sunt nisi fugiat laboris.
       </p>
+      <ul>
+        <li>{last12Months(new Date(2024, 1, 29)).ini.toString()}</li>
+        <li>{last12Months(new Date(2024, 1, 29)).end.toString()}</li>
+      </ul>
     </div>
   );
 }
