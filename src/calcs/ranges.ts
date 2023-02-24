@@ -18,12 +18,12 @@ export const last30Days = (curr = new Date()): TRange => ({
 });
 
 export const last3Months = (curr = new Date()): TRange => ({
-  ini: subtractMonth(2, curr),
+  ini: subtractMonth(3, curr),
   end: curr,
 });
 
 export const last12Months = (curr = new Date()): TRange => ({
-  ini: subtractMonth(11, curr),
+  ini: subtractMonth(12, curr),
   end: curr,
 });
 
