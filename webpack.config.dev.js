@@ -53,6 +53,6 @@ module.exports = {
       directory: path.join(__dirname, "dist"),
     },
     watchFiles: path.join(__dirname, "src", "**"),
-    port: 3640,
+    port: 3641,
   },
 };

@@ -21,8 +21,8 @@ export default function App() {
         enim deserunt mollit culpa eiusmod sunt nisi fugiat laboris.
       </p>
       <ul>
-        <li>{last12Months(new Date(2024, 1, 29)).ini.toString()}</li>
-        <li>{last12Months(new Date(2024, 1, 29)).end.toString()}</li>
+        <li>{last12Months().ini.toString()}</li>
+        <li>{last12Months().end.toString()}</li>
       </ul>
     </div>
   );

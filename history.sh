@@ -1,7 +1,7 @@
 #? Command history
 sudo npm i -g npm
-npm i react react-dom tailwindcss
-npm i -D typescript ts-loader @types/react @types/react-dom
+npm i react react-dom tailwindcss luxon lodash
+npm i -D typescript ts-loader @types/react @types/react-dom @types/luxon
 npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader
 npm i -D webpack webpack-cli webpack-dev-server
 npm i -D html-webpack-plugin
