@@ -1,7 +1,8 @@
 import * as React from "react";
-import { last12Months } from "./calcs/ranges";
+import { quarter2date } from "../../calcs/ranges";
+import MonthCalendar from "../../components/MonthCalendar";
 
-export default function App() {
+export default function Home() {
   return (
     <div className="container mx-auto">
       <h1 className="text-4xl text-center text-teal-500">Hello Iva Burgess</h1>
@@ -21,9 +22,10 @@ export default function App() {
         enim deserunt mollit culpa eiusmod sunt nisi fugiat laboris.
       </p>
       <ul>
-        <li>{last12Months().ini.toString()}</li>
-        <li>{last12Months().end.toString()}</li>
+        <li>{quarter2date().ini.toLocaleString()}</li>
+        <li>{quarter2date().end.toLocaleString()}</li>
       </ul>
+      <MonthCalendar />
     </div>
   );
 }

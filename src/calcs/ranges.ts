@@ -18,21 +18,21 @@ export const last30Days = (curr = DateTime.local()): TRange => ({
 });
 
 export const last3Months = (curr = DateTime.local()): TRange => ({
-  ini: curr.minus({ months: 3 }).startOf("month"),
+  ini: curr.startOf("day").minus({ months: 3 }),
   end: curr,
 });
 
 export const last12Months = (curr = DateTime.local()): TRange => ({
-  ini: curr.minus({ months: 12 }).startOf("month"),
+  ini: curr.startOf("day").minus({ months: 12 }),
   end: curr,
 });
 
 export const month2date = (curr = DateTime.local()): TRange => ({
-  ini: curr.startOf("month"),
+  ini: curr.startOf("day").startOf("month"),
   end: curr,
 });
 
 export const quarter2date = (curr = DateTime.local()): TRange => ({
-  ini: curr.startOf("quarter"),
+  ini: curr.startOf("day").startOf("quarter"),
   end: curr,
 });
