@@ -11,7 +11,7 @@ const Header = ({ currDay }: THeader) => (
     <LeftBtn />
     <span
       tabIndex={0}
-      className="focus:outline-none  text-base font-bold dark:text-gray-100 text-gray-800"
+      className="focus:outline-none text-base font-bold text-gray-100"
     >
       {currDay.toFormat("MMMM yyyy")}
     </span>

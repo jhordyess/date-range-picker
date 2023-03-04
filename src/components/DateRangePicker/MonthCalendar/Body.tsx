@@ -24,9 +24,7 @@ const HeadRow = () => (
     {week.map(({ label, key }) => (
       <th key={key}>
         <div className="w-full flex justify-center">
-          <p className="text-sm font-bold text-center text-gray-800 dark:text-gray-100">
-            {label}
-          </p>
+          <p className="text-sm font-bold text-center text-gray-100">{label}</p>
         </div>
       </th>
     ))}
@@ -64,7 +62,7 @@ const WeekRow = ({
             </div>
           ) : (
             <div className="px-2 py-2 cursor-pointer flex w-full justify-center">
-              <p className="text-base text-gray-500 dark:text-gray-100 font-medium">
+              <p className="text-base text-gray-100 font-medium">
                 {String(day)}
               </p>
             </div>

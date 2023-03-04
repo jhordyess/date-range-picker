@@ -3,7 +3,7 @@ import * as React from "react";
 export const LeftBtn = () => (
   <button
     aria-label="calendar backward"
-    className="focus:text-gray-400 hover:text-gray-400 text-gray-800 dark:text-gray-100"
+    className="focus:text-gray-400 hover:text-gray-400 text-gray-100"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ export const LeftBtn = () => (
 export const RightBtn = () => (
   <button
     aria-label="calendar forward"
-    className="focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-800 dark:text-gray-100"
+    className="focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-100"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
