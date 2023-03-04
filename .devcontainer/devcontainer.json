@@ -6,7 +6,9 @@
       "extensions": [
         "esbenp.prettier-vscode",
         "dsznajder.es7-react-js-snippets",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "planbcoding.vscode-react-refactor",
+        "WallabyJs.console-ninja"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "zsh"

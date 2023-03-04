@@ -22,6 +22,7 @@ export const LeftBtn = () => (
     </svg>
   </button>
 );
+
 export const RightBtn = () => (
   <button
     aria-label="calendar forward"

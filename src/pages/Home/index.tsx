@@ -1,31 +1,25 @@
+import { DateTime } from "luxon";
 import * as React from "react";
-import { quarter2date } from "../../calcs/ranges";
-import MonthCalendar from "../../components/MonthCalendar";
+import DateRangePicker from "../../components/DateRangePicker";
 
 export default function Home() {
+  const now = DateTime.local();
   return (
-    <div className="container mx-auto">
-      <h1 className="text-4xl text-center text-teal-500">Hello Iva Burgess</h1>
-      <p className="mx-auto">
-        Adipisicing ea qui dolor consectetur ipsum et esse officia non
-        consectetur occaecat quis est. Deserunt voluptate proident consectetur
-        dolore mollit. Ex qui excepteur qui dolore aliqua id dolore quis tempor
-        veniam nostrud mollit. Excepteur commodo deserunt non elit.s
-      </p>
-      <p>
-        Laboris commodo pariatur do laboris consequat et. Labore do ullamco
-        culpa anim occaecat dolore ullamco fugiat do veniam. Ea aliquip commodo
-        elit ipsum commodo consequat veniam aute esse velit dolor irure.
-        Adipisicing ullamco irure voluptate esse incididunt eu. Non adipisicing
-        magna do consequat minim nisi aliqua culpa irure et. Proident id
-        consequat duis aliquip velit magna fugiat in. Et duis sunt mollit amet
-        enim deserunt mollit culpa eiusmod sunt nisi fugiat laboris.
-      </p>
-      <ul>
-        <li>{quarter2date().ini.toLocaleString()}</li>
-        <li>{quarter2date().end.toLocaleString()}</li>
-      </ul>
-      <MonthCalendar />
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <main>
+        <DateRangePicker now={now} />
+      </main>
+      <footer className="mt-8">
+        Made with 💪 by{" "}
+        <a
+          className="text-primary hover:text-primary-complementary"
+          href="https://www.jhordyess.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Jhordyess
+        </a>
+      </footer>
     </div>
   );
 }

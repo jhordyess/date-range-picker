@@ -1,5 +1,5 @@
 import * as React from "react";
-import { DayNumbers } from "luxon";
+import * as _ from "lodash";
 
 type TBodyProps = {
   monthWeeks: {
@@ -24,7 +24,7 @@ const HeadRow = () => (
     {week.map(({ label, key }) => (
       <th key={key}>
         <div className="w-full flex justify-center">
-          <p className="text-base font-medium text-center text-gray-800 dark:text-gray-100">
+          <p className="text-sm font-bold text-center text-gray-800 dark:text-gray-100">
             {label}
           </p>
         </div>
@@ -43,13 +43,11 @@ const WeekRow = ({
   const leftEmpty = firstWeek ? 7 - days.length : 0;
   return (
     <tr>
-      {Array(leftEmpty)
-        .fill(undefined)
-        .map((_, index) => (
-          <td key={id + "e" + index}>
-            <div className="px-2 py-2 cursor-pointer flex w-full justify-center"></div>
-          </td>
-        ))}
+      {_.times(leftEmpty, (index) => (
+        <td key={id + "e" + index}>
+          <div className="px-2 py-2 cursor-pointer flex w-full justify-center"></div>
+        </td>
+      ))}
       {days.map((day, index) => (
         <td className={firstWeek ? "pt-6" : ""} key={id + index}>
           {index === currDayIndex ? (
@@ -58,7 +56,7 @@ const WeekRow = ({
                 <a
                   role="link"
                   tabIndex={0}
-                  className="focus:outline-none  focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-500 hover:bg-indigo-500 text-base w-8 h-8 flex items-center justify-center font-medium text-white bg-indigo-700 rounded-full"
+                  className="text-base w-10 h-10 flex items-center justify-center font-medium text-white bg-primary rounded-lg"
                 >
                   {String(day)}
                 </a>

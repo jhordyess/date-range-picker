@@ -1,12 +1,12 @@
-import { DateTime, DayNumbers } from "luxon";
 import * as React from "react";
+import { DateTime, DayNumbers } from "luxon";
 import Body from "./Body";
 import Header from "./Header";
 
 const getMonthWeeks = (date: DateTime) => {
-  const alldatesMonth = date.startOf("month").until(date.endOf("month"));
+  const allDatesMonth = date.startOf("month").until(date.endOf("month"));
   //? Get array of weeks
-  const weekArray = alldatesMonth
+  const weekArray = allDatesMonth
     .splitBy({ week: 1 })
     .map((week) => week.splitBy({ day: 1 }).map(({ start }) => start.day));
   //? Loop on the "weekArray", with every item, shift the last subitems to the left of the next item.
@@ -29,16 +29,10 @@ const getMonthWeeks = (date: DateTime) => {
   }));
 };
 
-export default function MonthCalendar() {
-  const now = DateTime.local();
-  return (
-    <div className="flex items-center justify-center py-8 px-4">
-      <div className="max-w-sm w-full shadow-lg">
-        <div className="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">
-          <Header currDay={now} />
-          <Body monthWeeks={getMonthWeeks(now)} currDay={now.day} />
-        </div>
-      </div>
-    </div>
-  );
-}
+const MonthCalendar = ({ now = DateTime.local(), currDay = undefined }) => (
+  <>
+    <Header currDay={now} />
+    <Body monthWeeks={getMonthWeeks(now)} currDay={currDay} />
+  </>
+);
+export default MonthCalendar;
