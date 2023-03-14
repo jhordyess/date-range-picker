@@ -1,42 +1,19 @@
 import * as React from "react";
 import * as _ from "lodash";
 
-type TBodyProps = {
-  monthWeeks: {
-    values: number[];
-    key: string;
-  }[];
-  currDay: number;
-};
-
-const week = [
-  { label: "Mo", key: "mo" },
-  { label: "Tu", key: "tu" },
-  { label: "We", key: "we" },
-  { label: "Th", key: "th" },
-  { label: "Fr", key: "fr" },
-  { label: "Sa", key: "sa" },
-  { label: "Su", key: "su" },
-];
-
-const HeadRow = () => (
-  <tr>
-    {week.map(({ label, key }) => (
-      <th key={key}>
-        <div className="w-full flex justify-center">
-          <p className="text-sm font-bold text-center text-gray-100">{label}</p>
-        </div>
-      </th>
-    ))}
-  </tr>
-);
+interface Props {
+  firstWeek: boolean;
+  days: number[];
+  currDayIndex?: number;
+  id: string;
+}
 
 const WeekRow = ({
   firstWeek = false,
   days = [],
-  currDayIndex = undefined,
+  currDayIndex,
   id = "w0883676",
-}) => {
+}: Props) => {
   if (days.length < 0 || days.length > 7) throw new RangeError("Max 7 days!");
   const leftEmpty = firstWeek ? 7 - days.length : 0;
   return (
@@ -73,24 +50,4 @@ const WeekRow = ({
   );
 };
 
-const Body = ({ monthWeeks, currDay }: TBodyProps) => (
-  <div className="flex items-center justify-between pt-12 overflow-x-auto">
-    <table className="w-full">
-      <thead>
-        <HeadRow />
-      </thead>
-      <tbody>
-        {monthWeeks.map(({ values, key }, index) => (
-          <WeekRow
-            key={key}
-            id={key}
-            days={values}
-            firstWeek={index === 0}
-            currDayIndex={values.indexOf(currDay)}
-          />
-        ))}
-      </tbody>
-    </table>
-  </div>
-);
-export default Body;
+export default WeekRow;

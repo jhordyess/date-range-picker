@@ -2,11 +2,11 @@ import * as React from "react";
 import { DateTime } from "luxon";
 import { LeftBtn, RightBtn } from "./Buttons";
 
-type THeader = {
+interface Props {
   currDay: DateTime;
-};
+}
 
-const Header = ({ currDay }: THeader) => (
+const Header = ({ currDay }: Props) => (
   <div className="flex justify-between items-center">
     <LeftBtn />
     <span
