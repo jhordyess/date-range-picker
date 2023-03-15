@@ -3,17 +3,17 @@ import { DateTime } from "luxon";
 import { LeftBtn, RightBtn } from "./Buttons";
 
 interface Props {
-  currDay: DateTime;
+  date: DateTime;
 }
 
-const Header = ({ currDay }: Props) => (
+const Header = ({ date }: Props) => (
   <div className="flex justify-between items-center">
     <LeftBtn />
     <span
       tabIndex={0}
       className="focus:outline-none text-base font-bold text-gray-100"
     >
-      {currDay.toFormat("MMMM yyyy")}
+      {date.toFormat("MMMM yyyy")}
     </span>
     <RightBtn />
   </div>

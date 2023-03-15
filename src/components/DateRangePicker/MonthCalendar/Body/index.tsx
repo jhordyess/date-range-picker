@@ -1,33 +1,32 @@
 import * as React from "react";
-import * as _ from "lodash";
-import { MonthWeeks, Range } from "../../types";
+import { getMonthWeeks } from "../../../../helpers/date/monthWeek";
 import WeekRow from "./WeekRow";
 import HeadRow from "./HeadRow";
+import { DateTime, Interval } from "luxon";
+import { last7Days } from "../../../../helpers/date/ranges";
 
 interface Props {
-  monthWeeks: MonthWeeks[];
-  currDay: number;
-  range?: Range;
+  date: DateTime;
+  currDay: DateTime;
+  range?: Interval;
 }
 
-const Body = ({ monthWeeks, currDay, range }: Props) => (
-  <div className="flex items-center justify-between pt-12 overflow-x-auto">
-    <table className="w-full">
-      <thead>
-        <HeadRow />
-      </thead>
-      <tbody>
-        {monthWeeks.map(({ values, key }, index) => (
-          <WeekRow
-            key={key}
-            id={key}
-            days={values}
-            firstWeek={index === 0}
-            currDayIndex={values.indexOf(currDay)}
-          />
-        ))}
-      </tbody>
-    </table>
-  </div>
-);
+const Body = ({ date, currDay, range }: Props) => {
+  const monthWeeks = getMonthWeeks(date, currDay, last7Days(date));
+  return (
+    <div className="flex items-center justify-between pt-12 overflow-x-auto">
+      <table className="w-full">
+        <thead>
+          <HeadRow />
+        </thead>
+        <tbody>
+          {monthWeeks.map(({ week, key }, index) => (
+            <WeekRow key={key} id={key} week={week} firstWeek={index === 0} />
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
 export default Body;

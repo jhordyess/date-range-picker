@@ -33,11 +33,11 @@ const DateRangePicker = ({ now = DateTime.local() }) => (
     <main className="w-642 flex-row">
       <section className="flex">
         <div className="w-320 h-320 p-5 bg-background border-r-2 border-secondary">
-          <MonthCalendar now={now} currDay={now.day} />
+          <MonthCalendar date={now} currDay={now} />
         </div>
         <div className="w-320 h-320 p-5 bg-background rounded-tr-lg">
           <MonthCalendar
-            now={now.plus({
+            date={now.plus({
               month: 1,
             })}
           />
