@@ -2,6 +2,10 @@
 
 Under construction 👷.
 
+## Screenshot
+
+![Dark](https://res.cloudinary.com/jhordyess/image/upload/v1679005461/date-range-picker/dark.png)
+
 ## Dev Info
 
 - JavaScript library: [Meta - React](https://reactjs.org/)
