@@ -1,9 +1,12 @@
 import * as React from "react";
 
-export const LeftBtn = () => (
+export const LeftBtn = ({ onClick = () => {} }) => (
   <button
     aria-label="calendar backward"
-    className="focus:text-gray-400 hover:text-gray-400 text-gray-100"
+    className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-400 hover:text-gray-100 hover:bg-secondary"
+    onClick={() => {
+      onClick();
+    }}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,10 +26,13 @@ export const LeftBtn = () => (
   </button>
 );
 
-export const RightBtn = () => (
+export const RightBtn = ({ onClick = () => {} }) => (
   <button
     aria-label="calendar forward"
-    className="focus:text-gray-400 hover:text-gray-400 ml-3 text-gray-100"
+    className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-400 hover:text-gray-100 hover:bg-secondary"
+    onClick={() => {
+      onClick();
+    }}
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"

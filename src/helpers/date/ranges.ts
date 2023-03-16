@@ -46,7 +46,7 @@ export const last12Months = (curr = DateTime.local()) =>
   Interval.fromDateTimes(curr.startOf("day").minus({ months: 12 }), curr);
 
 /**
- * Returns a range representing the current month from the given date.
+ * Returns a range representing the current month to the given date.
  *
  * @param curr - The current date. Defaults to the local date and time.
  * @returns An interval object representing the range of the current month.
@@ -62,3 +62,12 @@ export const month2date = (curr = DateTime.local()) =>
  */
 export const quarter2date = (curr = DateTime.local()) =>
   Interval.fromDateTimes(curr.startOf("day").startOf("quarter"), curr);
+
+/**
+ * Returns a range representing the current month from the given date.
+ *
+ * @param curr - The current date. Defaults to the local date and time.
+ * @returns An interval object representing the range of the current month.
+ */
+export const getAllMonth = (curr = DateTime.local()) =>
+  curr.startOf("month").until(curr.endOf("month"));

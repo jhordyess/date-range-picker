@@ -3,7 +3,6 @@ import { getMonthWeeks } from "../../../../helpers/date/monthWeek";
 import WeekRow from "./WeekRow";
 import HeadRow from "./HeadRow";
 import { DateTime, Interval } from "luxon";
-import { last7Days } from "../../../../helpers/date/ranges";
 
 interface Props {
   date: DateTime;
@@ -12,7 +11,7 @@ interface Props {
 }
 
 const Body = ({ date, currDay, range }: Props) => {
-  const monthWeeks = getMonthWeeks(date, currDay, last7Days(date));
+  const monthWeeks = getMonthWeeks(date, currDay, range);
   return (
     <div className="flex items-center justify-between pt-12 overflow-x-auto">
       <table className="w-full">

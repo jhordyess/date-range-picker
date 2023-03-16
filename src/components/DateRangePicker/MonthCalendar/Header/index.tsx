@@ -4,18 +4,20 @@ import { LeftBtn, RightBtn } from "./Buttons";
 
 interface Props {
   date: DateTime;
+  handlePrev: () => void;
+  handleNext: () => void;
 }
 
-const Header = ({ date }: Props) => (
+const Header = ({ date, handlePrev, handleNext }: Props) => (
   <div className="flex justify-between items-center">
-    <LeftBtn />
+    <LeftBtn onClick={handlePrev} />
     <span
       tabIndex={0}
       className="focus:outline-none text-base font-bold text-gray-100"
     >
       {date.toFormat("MMMM yyyy")}
     </span>
-    <RightBtn />
+    <RightBtn onClick={handleNext} />
   </div>
 );
 
