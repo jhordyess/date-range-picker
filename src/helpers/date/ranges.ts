@@ -71,3 +71,12 @@ export const quarter2date = (curr = DateTime.local()) =>
  */
 export const getAllMonth = (curr = DateTime.local()) =>
   curr.startOf("month").until(curr.endOf("month"));
+
+/**
+ * Returns a range representing the current day from the given date.
+ *
+ * @param curr - The current date. Defaults to the local date and time.
+ * @returns An interval object representing the range of the current day.
+ */
+export const today = (curr = DateTime.local()) =>
+  Interval.fromDateTimes(curr.startOf("day"), curr.endOf("day"));

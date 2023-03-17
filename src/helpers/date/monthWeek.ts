@@ -18,21 +18,16 @@ export function getMonthWeeks(
   range: Interval
 ): weekFormat[] {
   const allDatesMonth = getAllMonth(date);
-  const totalWeeks = allDatesMonth.count("weeks");
-  const plusStartMonth = 7 - date.startOf("month").weekday;
-  const plusEndMonth = date.endOf("month").weekday - 1;
+  const totalWeeks = 6;
+  const minusStartMonth = date.startOf("month").weekday - 1;
   const weekIntervals: weekFormat[] = [];
-  let start = allDatesMonth.start.startOf("day");
+  let start = allDatesMonth.start
+    .minus({ days: minusStartMonth })
+    .startOf("day");
   let end;
 
   for (let i = 1; i <= totalWeeks; i++) {
-    if (i === 1) {
-      end = start.plus({ days: plusStartMonth }).endOf("day");
-    } else if (i === totalWeeks) {
-      end = start.plus({ days: plusEndMonth }).endOf("day");
-    } else {
-      end = start.plus({ days: 6 }).endOf("day");
-    }
+    end = start.plus({ days: 6 }).endOf("day");
 
     const week: CellProp[] = Interval.fromDateTimes(start, end)
       .splitBy({ day: 1 })
@@ -41,16 +36,23 @@ export function getMonthWeeks(
         const isToday = start.equals(currDay.startOf("day"));
         const isStart = start.equals(range.start.startOf("day"));
         const isEnd = start.equals(range.end.startOf("day"));
-        const isBetween = range.contains(start) && !isStart && !isEnd;
+        const isRangeToday = isStart && isEnd;
+        const isAnotherMonth = !allDatesMonth.contains(start);
+        const isBetween =
+          range.contains(start) && !isStart && !isEnd && !isAnotherMonth;
 
         return {
           day: start.day,
-          type: isStart
+          type: isRangeToday
+            ? "full"
+            : isStart
             ? "left"
             : isBetween
             ? "between"
             : isEnd
             ? "right"
+            : isAnotherMonth
+            ? "empty"
             : "normal",
           isToday,
         };

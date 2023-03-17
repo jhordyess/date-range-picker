@@ -9,6 +9,7 @@ import {
   last7Days,
   month2date,
   quarter2date,
+  today,
 } from "../../helpers/date/ranges";
 import MonthCalendar from "./MonthCalendar";
 
@@ -34,9 +35,9 @@ const DateRangePicker = ({ now = DateTime.local() }) => {
     firstMonth: DateTime;
     secondMonth: DateTime;
   }>({
-    range: month2date(now),
-    key: "m2d",
-    ...calc2Months(now, month2date(now)),
+    range: last12Months(now),
+    key: "lst12m",
+    ...calc2Months(now, last12Months(now)),
   });
 
   const handleRange = (key: string) => {

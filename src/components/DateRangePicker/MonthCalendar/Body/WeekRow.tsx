@@ -12,16 +12,22 @@ const Cell = ({ day, type, isToday }: CellProp) => {
   let className = "";
   switch (type) {
     case "right":
-      className = "bg-primary rounded-r-lg";
+      className = "text-white bg-primary rounded-r-lg";
       break;
     case "left":
-      className = "bg-primary rounded-l-lg";
+      className = "text-white bg-primary rounded-l-lg";
       break;
     case "full":
-      className = "bg-primary rounded-lg";
+      className = "text-white bg-primary rounded-lg";
       break;
     case "between":
-      className = "bg-secondary";
+      className = "text-white bg-secondary";
+      break;
+    case "empty":
+      className = "text-gray-400";
+      break;
+    default:
+      className = "text-white";
       break;
   }
   return (
@@ -30,7 +36,7 @@ const Cell = ({ day, type, isToday }: CellProp) => {
         <a
           role="link"
           tabIndex={0}
-          className={`text-base w-10 h-10 flex items-center justify-center text-white ${className} ${
+          className={`text-base w-10 h-10 flex items-center justify-center ${className} ${
             isToday ? "font-bold" : "font-medium"
           }`}
         >
@@ -43,14 +49,8 @@ const Cell = ({ day, type, isToday }: CellProp) => {
 
 const WeekRow = ({ firstWeek = false, week = [], id = "w0883676" }: Props) => {
   if (week.length < 0 || week.length > 7) throw new RangeError("Max 7 days!");
-  const leftEmpty = firstWeek ? 7 - week.length : 0;
   return (
     <tr>
-      {_.times(leftEmpty, (index) => (
-        <td key={id + "e" + index}>
-          <div className="px-2 py-2 cursor-pointer flex w-full justify-center"></div>
-        </td>
-      ))}
       {week.map(({ isToday, type, day }, index) => (
         <td className={firstWeek ? "pt-6" : ""} key={id + index}>
           <Cell day={day} isToday={isToday} type={type} />
