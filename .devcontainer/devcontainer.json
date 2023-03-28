@@ -1,13 +1,12 @@
 {
   "name": "date-range-picker",
-  "image": "jhordyess/node:16",
+  "image": "jhordyess/node",
   "customizations": {
     "vscode": {
       "extensions": [
         "esbenp.prettier-vscode",
         "dsznajder.es7-react-js-snippets",
         "bradlc.vscode-tailwindcss",
-        "planbcoding.vscode-react-refactor",
         "WallabyJs.console-ninja"
       ],
       "settings": {
