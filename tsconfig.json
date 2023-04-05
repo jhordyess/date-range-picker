@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
-    "jsx": "react",
-    "allowJs": true,
     "moduleResolution": "node",
-    "downlevelIteration": true
+    "jsx": "react",
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@helpers/*": ["helpers/*"],
+      "@pages/*": ["pages/*"]
+    }
   },
-  "exclude": ["node_modules", "dist"],
-  "include": ["./src/**/*"]
+  "exclude": ["node_modules", "dist"]
 }

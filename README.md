@@ -1,10 +1,21 @@
 # Date range picker
 
-Basic date range picker using ReactJS and TailwindCSS.
+Date Range Picker is a React component that allows you to select a date range. It is built with Tailwind CSS, Luxon, and Lodash.
+
+## Description
 
 Use predefined options such as "Last 7 days" or "Last 12 months" with dynamic calendars.
 
 The design is inspired by [Orman Clark's](https://dribbble.com/ormanclark) [Free Date Picker Figma Component](https://dribbble.com/shots/15616759-Free-Date-Picker-Figma-Component/attachments/7406055?mode=media).
+
+### Technologies Used
+
+- JS Libraries: [ReactJS](https://reactjs.org/), [Lodash](https://lodash.com/), [Luxon](https://moment.github.io/luxon/)
+- Programming Language: [TypeScript](https://www.typescriptlang.org/)
+- CSS Libraries: [Tailwind CSS](https://tailwindcss.com/)
+- Bundler: [Webpack](https://webpack.js.org/)
+- Hosting: [GitHub Pages](https://pages.github.com/)
+- Dev Environment: [VSCode](https://code.visualstudio.com/) with [dev containers](https://code.visualstudio.com/docs/remote/containers) in [Zorin OS](https://zorinos.com/)
 
 ## Screenshot
 
@@ -14,17 +25,6 @@ The design is inspired by [Orman Clark's](https://dribbble.com/ormanclark) [Free
 
 See online <https://date.jhordyess.com>.
 
-## Dev Info
-
-- JavaScript library: [Meta - React](https://reactjs.org/)
-- CSS framework: [Tailwind CSS](https://tailwindcss.com/)
-- Typed programming language: [TypeScript](https://www.typescriptlang.org/)
-- JavaScript library: [Lodash](https://lodash.com/)
-- JavaScript library: [Luxon](https://moment.github.io/luxon)
-- Module bundler: [OpenJS Foundation - Webpack](https://webpack.js.org/)
-- Server Environment: [OpenJS Foundation - Node.js](https://nodejs.org/)
-- [VSCode](https://code.visualstudio.com/) with [remote containers](https://code.visualstudio.com/docs/remote/containers)
-
 ## To-Do
 
 - Add a feature to change the range, selecting days in the month.
@@ -33,9 +33,13 @@ See online <https://date.jhordyess.com>.
 - Make the design responsive.
 - Add more features 🤔
 
+## Contribution
+
+If you would like to contribute to the project, open an issue or make a pull request on the repository.
+
 ## License
 
-© 2023 [Jhordyess](https://github.com/jhordyess). Under the [MIT](https://choosealicense.com/licenses/mit/) license.
+© 2023> [Jhordyess](https://github.com/jhordyess). Under the [MIT](https://choosealicense.com/licenses/mit/) license. See the LICENSE file for more details.
 
 ---
 
