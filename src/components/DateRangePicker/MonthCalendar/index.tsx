@@ -1,5 +1,5 @@
 import * as React from "react";
-import { DateTime, DayNumbers, Interval } from "luxon";
+import { DateTime, Interval } from "luxon";
 import Body from "./Body";
 import Header from "./Header";
 

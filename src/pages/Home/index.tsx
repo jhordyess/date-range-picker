@@ -1,6 +1,6 @@
 import { DateTime } from "luxon";
 import * as React from "react";
-import DateRangePicker from "../../components/DateRangePicker";
+import DateRangePicker from "@components/DateRangePicker";
 
 export default function Home() {
   const now = DateTime.local();

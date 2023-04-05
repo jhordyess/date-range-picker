@@ -1,5 +1,5 @@
 import * as React from "react";
-import { getMonthWeeks } from "../../../../helpers/date/monthWeek";
+import { getMonthWeeks } from "@helpers/date/monthWeek";
 import WeekRow from "./WeekRow";
 import HeadRow from "./HeadRow";
 import { DateTime, Interval } from "luxon";

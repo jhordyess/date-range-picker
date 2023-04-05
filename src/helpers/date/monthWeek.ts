@@ -1,6 +1,6 @@
 import { DateTime, Interval } from "luxon";
-import { CellProp } from "../../types";
 import { getAllMonth } from "./ranges";
+import { CellProp } from "../../types";
 
 type weekFormat = { week: CellProp[]; key: string };
 
@@ -17,14 +17,14 @@ export function getMonthWeeks(
   currDay: DateTime,
   range: Interval
 ): weekFormat[] {
-  const allDatesMonth = getAllMonth(date);
+  const allDatesMonth: Interval = getAllMonth(date);
   const totalWeeks = 6;
   const minusStartMonth = date.startOf("month").weekday - 1;
   const weekIntervals: weekFormat[] = [];
   let start = allDatesMonth.start
     .minus({ days: minusStartMonth })
     .startOf("day");
-  let end;
+  let end: DateTime;
 
   for (let i = 1; i <= totalWeeks; i++) {
     end = start.plus({ days: 6 }).endOf("day");
@@ -43,7 +43,9 @@ export function getMonthWeeks(
 
         return {
           day: start.day,
-          type: isRangeToday
+          type: isAnotherMonth
+            ? "empty"
+            : isRangeToday
             ? "full"
             : isStart
             ? "left"
@@ -51,11 +53,9 @@ export function getMonthWeeks(
             ? "between"
             : isEnd
             ? "right"
-            : isAnotherMonth
-            ? "empty"
             : "normal",
           isToday,
-        };
+        } as CellProp;
       });
 
     weekIntervals.push({ week, key: `week${i}` });

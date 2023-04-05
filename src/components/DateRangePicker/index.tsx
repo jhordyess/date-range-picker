@@ -1,6 +1,6 @@
 import { DateTime, Interval } from "luxon";
 import * as React from "react";
-import { calc2Months } from "../../helpers/date/monthWeek";
+import { calc2Months } from "@helpers/date/monthWeek";
 import {
   last12Months,
   last14Days,
