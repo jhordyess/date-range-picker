@@ -19,6 +19,13 @@ export default function Home() {
         >
           Jhordyess
         </a>
+        <br />
+        <a
+          href="https://github.com/jhordyess/date-range-picker"
+          target="_blank"
+        >
+          👉 View on GitHub
+        </a>
       </footer>
     </div>
   );
