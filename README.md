@@ -17,13 +17,13 @@ The design is inspired by [Orman Clark's](https://dribbble.com/ormanclark) [Free
 - Hosting: [GitHub Pages](https://pages.github.com/)
 - Dev Environment: [VSCode](https://code.visualstudio.com/) with [dev containers](https://code.visualstudio.com/docs/remote/containers) in [Zorin OS](https://zorinos.com/)
 
-## Screenshot
-
-![Dark](https://res.cloudinary.com/jhordyess/image/upload/v1679088091/date-range-picker/dark.png)
-
-## Online
+### Online
 
 See online <https://date.jhordyess.com>.
+
+### Screenshot
+
+![Dark](https://res.cloudinary.com/jhordyess/image/upload/v1679088091/date-range-picker/dark.png)
 
 ## To-Do
 
@@ -39,7 +39,7 @@ If you would like to contribute to the project, open an issue or make a pull req
 
 ## License
 
-© 2023> [Jhordyess](https://github.com/jhordyess). Under the [MIT](https://choosealicense.com/licenses/mit/) license. See the LICENSE file for more details.
+© 2023> [Jhordyess](https://github.com/jhordyess). Under the [MIT](https://choosealicense.com/licenses/mit/) license. See the [LICENSE](./LICENSE) file for more details.
 
 ---
 
