@@ -5,9 +5,6 @@ sudo npm i -g npm
 # Install required packages for React development
 npm i react react-dom
 
-# Install Babel packages for transpiling ES6/JSX to browser-compatible code
-npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader
-
 # Bundler
 npm i -D webpack webpack-cli webpack-dev-server
 npm i -D html-webpack-plugin
