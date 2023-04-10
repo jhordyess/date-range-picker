@@ -1,6 +1,6 @@
 # Date range picker
 
-Date Range Picker is a React component that allows you to select a date range. It is built with Tailwind CSS, Luxon, and Lodash.
+Date Range Picker is a React component to select a date range. It is built with Tailwind CSS, Luxon, and Lodash.
 
 ## Description
 
@@ -19,7 +19,7 @@ The design is inspired by [Orman Clark's](https://dribbble.com/ormanclark) [Free
 
 ### Online
 
-See online <https://date.jhordyess.com>.
+Visit the project at: <https://date.jhordyess.com>.
 
 ### Screenshot
 
