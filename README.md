@@ -6,7 +6,7 @@ Date Range Picker is a React component to select a date range.
 
 Use predefined options such as "Last 7 days" or "Last 12 months" with dynamic calendars.
 
-The design is inspired by [Orman Clark's](https://dribbble.com/ormanclark) [Free Date Picker Figma Component](https://dribbble.com/shots/15616759-Free-Date-Picker-Figma-Component/attachments/7406055?mode=media).
+The design is inspired by [Orman Clark's Free Date Picker Figma Component](https://dribbble.com/shots/15616759-Free-Date-Picker-Figma-Component/attachments/7406055?mode=media).
 
 ### Technologies Used
 
