@@ -15,7 +15,6 @@ export default function Home() {
           className="text-primary hover:text-primary-complementary"
           href="https://www.jhordyess.com"
           target="_blank"
-          rel="noreferrer"
         >
           Jhordyess
         </a>
