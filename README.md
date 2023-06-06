@@ -19,7 +19,7 @@ The design is inspired by [Orman Clark's Free Date Picker Figma Component](https
 
 ### Online
 
-Visit the project at: <https://date.jhordyess.com>.
+Visit the project at: <https://jhordyess.github.io/date-range-picker>.
 
 ### Screenshot
 
