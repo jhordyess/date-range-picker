@@ -9,5 +9,5 @@ export default defineConfig({
       '@': '/src'
     }
   },
-  base: '/date-range-pricker/'
+  base: '/date-range-picker/'
 })

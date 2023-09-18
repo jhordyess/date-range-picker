@@ -1,5 +1,5 @@
 {
-  "name": "date-range-pricker",
+  "name": "date-range-picker",
   "description": "Date Range Picker is a React component to select a date range.",
   "version": "1.1.0",
   "author": "Jhordy Gavinchu <dev@jhordyess.com>",
