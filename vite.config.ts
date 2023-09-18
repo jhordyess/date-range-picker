@@ -8,5 +8,6 @@ export default defineConfig({
     alias: {
       '@': '/src'
     }
-  }
+  },
+  base: '/date-range-pricker/'
 })
