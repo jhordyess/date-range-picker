@@ -1,19 +1,18 @@
-import * as React from "react";
-import { getMonthWeeks } from "@helpers/date/monthWeek";
-import WeekRow from "./WeekRow";
-import HeadRow from "./HeadRow";
-import { DateTime, Interval } from "luxon";
+import { getMonthWeeks } from '@/helpers/date/monthWeek'
+import WeekRow from './WeekRow'
+import HeadRow from './HeadRow'
+import { DateTime, Interval } from 'luxon'
 
 interface Props {
-  date: DateTime;
-  currDay: DateTime;
-  range?: Interval;
+  date: DateTime
+  currDay: DateTime
+  range?: Interval
 }
 
 const Body = ({ date, currDay, range }: Props) => {
-  const monthWeeks = getMonthWeeks(date, currDay, range);
+  const monthWeeks = getMonthWeeks(date, currDay, range)
   return (
-    <div className="flex items-center justify-between pt-12 overflow-x-auto">
+    <div className="flex items-center justify-between overflow-x-auto pt-12">
       <table className="w-full">
         <thead>
           <HeadRow />
@@ -25,7 +24,7 @@ const Body = ({ date, currDay, range }: Props) => {
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default Body;
+export default Body

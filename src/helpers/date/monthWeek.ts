@@ -1,8 +1,8 @@
-import { DateTime, Interval } from "luxon";
-import { getAllMonth } from "./ranges";
-import { CellProp } from "../../types";
+import { DateTime, Interval } from 'luxon'
+import { getAllMonth } from './ranges'
+import { CellProp } from '@/types'
 
-type weekFormat = { week: CellProp[]; key: string };
+type weekFormat = { week: CellProp[]; key: string }
 
 /**
  * Returns an array of weeks formatted with their respective cells within a given month.
@@ -12,57 +12,52 @@ type weekFormat = { week: CellProp[]; key: string };
  * @param range - The time range represented by an interval.
  * @returns An array of weeks with their respective cells within a given month.
  */
-export function getMonthWeeks(
-  date: DateTime,
-  currDay: DateTime,
-  range: Interval
-): weekFormat[] {
-  const allDatesMonth: Interval = getAllMonth(date);
-  const totalWeeks = 6;
-  const minusStartMonth = date.startOf("month").weekday - 1;
-  const weekIntervals: weekFormat[] = [];
-  let start = allDatesMonth.start
-    .minus({ days: minusStartMonth })
-    .startOf("day");
-  let end: DateTime;
+export function getMonthWeeks(date: DateTime, currDay: DateTime, range?: Interval): weekFormat[] {
+  const allDatesMonth: Interval = getAllMonth(date)
+  const totalWeeks = 6
+  const minusStartMonth = date.startOf('month').weekday - 1
+  const weekIntervals: weekFormat[] = []
+  let start = allDatesMonth.start?.minus({ days: minusStartMonth }).startOf('day')
+  if (!start || typeof range === 'undefined') return weekIntervals
+  let end: DateTime
 
   for (let i = 1; i <= totalWeeks; i++) {
-    end = start.plus({ days: 6 }).endOf("day");
+    end = start.plus({ days: 6 }).endOf('day')
 
     const week: CellProp[] = Interval.fromDateTimes(start, end)
       .splitBy({ day: 1 })
       .map(({ start }) => {
-        start = start.startOf("day");
-        const isToday = start.equals(currDay.startOf("day"));
-        const isStart = start.equals(range.start.startOf("day"));
-        const isEnd = start.equals(range.end.startOf("day"));
-        const isRangeToday = isStart && isEnd;
-        const isAnotherMonth = !allDatesMonth.contains(start);
-        const isBetween =
-          range.contains(start) && !isStart && !isEnd && !isAnotherMonth;
+        if (!start || !range.start || !range.end) return {} as CellProp
+        start = start.startOf('day')
+        const isToday = start.equals(currDay.startOf('day'))
+        const isStart = start.equals(range.start.startOf('day'))
+        const isEnd = start.equals(range.end.startOf('day'))
+        const isRangeToday = isStart && isEnd
+        const isAnotherMonth = !allDatesMonth.contains(start)
+        const isBetween = range.contains(start) && !isStart && !isEnd && !isAnotherMonth
 
         return {
           day: start.day,
           type: isAnotherMonth
-            ? "empty"
+            ? 'empty'
             : isRangeToday
-            ? "full"
+            ? 'full'
             : isStart
-            ? "left"
+            ? 'left'
             : isBetween
-            ? "between"
+            ? 'between'
             : isEnd
-            ? "right"
-            : "normal",
-          isToday,
-        } as CellProp;
-      });
+            ? 'right'
+            : 'normal',
+          isToday
+        } as CellProp
+      })
 
-    weekIntervals.push({ week, key: `week${i}` });
-    start = end.plus({ days: 1 }).startOf("day");
+    weekIntervals.push({ week, key: `week${i}` })
+    start = end.plus({ days: 1 }).startOf('day')
   }
 
-  return weekIntervals;
+  return weekIntervals
 }
 
 /**
@@ -77,12 +72,13 @@ export function calc2Months(
   now: DateTime,
   range: Interval
 ): { firstMonth: DateTime; secondMonth: DateTime } {
-  const allMonth = getAllMonth(now);
-  const rangeStart = range.start;
-  const rangeEnd = range.end;
-  const monthContainRange = allMonth.contains(rangeStart);
-  const nextMonth = now.plus({ month: 1 });
-  const firstMonth = monthContainRange ? now : rangeStart;
-  const secondMonth = monthContainRange ? nextMonth : rangeEnd;
-  return { firstMonth, secondMonth };
+  const allMonth = getAllMonth(now)
+  const rangeStart = range.start
+  const rangeEnd = range.end
+  if (!rangeStart || !rangeEnd) return { firstMonth: now, secondMonth: now.plus({ month: 1 }) }
+  const monthContainRange = allMonth.contains(rangeStart)
+  const nextMonth = now.plus({ month: 1 })
+  const firstMonth = monthContainRange ? now : rangeStart
+  const secondMonth = monthContainRange ? nextMonth : rangeEnd
+  return { firstMonth, secondMonth }
 }

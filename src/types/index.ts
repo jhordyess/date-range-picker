@@ -1,7 +1,7 @@
-import { DayNumbers } from "luxon";
+import { DayNumbers } from 'luxon'
 
 export interface CellProp {
-  day?: DayNumbers;
-  type: "left" | "right" | "full" | "between" | "normal" | "empty";
-  isToday: boolean;
+  day?: DayNumbers
+  type: 'left' | 'right' | 'full' | 'between' | 'normal' | 'empty'
+  isToday: boolean
 }

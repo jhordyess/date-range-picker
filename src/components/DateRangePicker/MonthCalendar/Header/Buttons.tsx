@@ -1,11 +1,9 @@
-import * as React from "react";
-
 export const LeftBtn = ({ onClick = () => {} }) => (
   <button
     aria-label="calendar backward"
-    className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-400 hover:text-gray-100 hover:bg-secondary"
+    className="flex h-10 w-10 items-center justify-center rounded-lg text-gray-400 hover:bg-secondary hover:text-gray-100"
     onClick={() => {
-      onClick();
+      onClick()
     }}
   >
     <svg
@@ -24,14 +22,14 @@ export const LeftBtn = ({ onClick = () => {} }) => (
       <polyline points="15 6 9 12 15 18" />
     </svg>
   </button>
-);
+)
 
 export const RightBtn = ({ onClick = () => {} }) => (
   <button
     aria-label="calendar forward"
-    className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-400 hover:text-gray-100 hover:bg-secondary"
+    className="flex h-10 w-10 items-center justify-center rounded-lg text-gray-400 hover:bg-secondary hover:text-gray-100"
     onClick={() => {
-      onClick();
+      onClick()
     }}
   >
     <svg
@@ -50,4 +48,4 @@ export const RightBtn = ({ onClick = () => {} }) => (
       <polyline points="9 6 15 12 9 18" />
     </svg>
   </button>
-);
+)

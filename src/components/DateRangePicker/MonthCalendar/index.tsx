@@ -1,14 +1,13 @@
-import * as React from "react";
-import { DateTime, Interval } from "luxon";
-import Body from "./Body";
-import Header from "./Header";
+import { DateTime, Interval } from 'luxon'
+import Body from './Body'
+import Header from './Header'
 
 interface Props {
-  date?: DateTime;
-  currDay?: DateTime;
-  range?: Interval;
-  handleNext?: () => void;
-  handlePrev?: () => void;
+  date?: DateTime
+  currDay?: DateTime
+  range?: Interval
+  handleNext?: () => void
+  handlePrev?: () => void
 }
 
 const MonthCalendar = ({
@@ -16,11 +15,11 @@ const MonthCalendar = ({
   currDay = DateTime.local(),
   handleNext = () => {},
   handlePrev = () => {},
-  range,
+  range
 }: Props) => (
   <>
     <Header date={date} handleNext={handleNext} handlePrev={handlePrev} />
     <Body date={date} currDay={currDay} range={range} />
   </>
-);
-export default MonthCalendar;
+)
+export default MonthCalendar
