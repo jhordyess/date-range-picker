@@ -13,7 +13,7 @@ The design is inspired by [Orman Clark's Free Date Picker Figma Component](https
 - JS Libraries: [ReactJS](https://reactjs.org/), [Lodash](https://lodash.com/), [Luxon](https://moment.github.io/luxon/)
 - Programming Language: [TypeScript](https://www.typescriptlang.org/)
 - CSS Libraries: [Tailwind CSS](https://tailwindcss.com/)
-- Bundler: [Webpack](https://webpack.js.org/)
+- Build Tool: [Vite](https://vitejs.dev/)
 - Hosting: [GitHub Pages](https://pages.github.com/)
 - Dev Environment: [VSCode](https://code.visualstudio.com/) with [dev containers](https://code.visualstudio.com/docs/remote/containers) in [Zorin OS](https://zorinos.com/)
 
